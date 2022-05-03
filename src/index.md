@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://trivium.network/assets/images/Trivium_w_name.svg
+heroImage: https://trivium.network/assets/images/slider/2.png
 tagline: 
 actionText: Get Started →
 actionLink: /docs/

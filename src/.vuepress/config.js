@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Trivium API Docs',
+  title: 'Trivium API',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -18,7 +18,8 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#0067f4' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: 'icon shortcut', href: 'https://trivium.network/assets/images/favicon.png', type:'image/png'}]
   ],
 
   /**
