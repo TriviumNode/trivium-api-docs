@@ -1,0 +1,19 @@
+{
+  "name": "trivium-api-docs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "authors": {
+    "name": "Xiphiar",
+    "email": "me@xiphiar.com"
+  },
+  "repository": "/trivium-api-docs",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
