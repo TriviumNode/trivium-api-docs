@@ -15,7 +15,7 @@ REST API for use with SecretJS 0.17.x
 `https://pulsar-2.api.trivium.network:1317`
 
 ### Cosmos gRPC-Web
-gRPC-Web API for use with SecretJS 2.x.x
+gRPC-Web API for use with SecretJS 1.x.x
 
 `https://pulsar-2.api.trivium.network:9091`
 
@@ -29,7 +29,7 @@ secretcli config chain-id pulsar-2
 ```
 
 
-### SecretJS 2.x.x
+### SecretJS 1.x.x
 ```js
 const { SecretNetworkClient } = require('secretjs');
 
