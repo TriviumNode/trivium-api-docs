@@ -9,7 +9,7 @@ features:
   details: RPC, REST, and gRPC-Web
 - title: Secret Pulsar Testnet
   details: RPC, REST, and gRPC-Web
-- title: IDEP Sanford Testnet
+- title: IDEP Makalu Testnet
   details: Coming Soon
-footer: Made by Trivium Node with ❤️
+footer: Built by Trivium Node with ❤️
 ---

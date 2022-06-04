@@ -73,3 +73,54 @@ const secretJS = new SigningCosmWasmClient(
     enigmaUtils
 )
 ```
+
+### Suggest to Keplr Wallet
+Keplr wallet can be used with any Cosmos SDK based chain by suggesting the chain to Keplr.  
+An example for pulsar-2 is below.  
+  
+Learn more about Keplr at [https://docs.keplr.app](https://docs.keplr.app)
+
+```js
+await window.keplr.experimentalSuggestChain({
+    chainId: "pulsar-2",
+    chainName: "Secret Pulsar Testnet",
+    rpc: "https://pulsar-2.api.trivium.network:26657",
+    rest: "https://pulsar-2.api.trivium.network:1317",
+    bip44: {
+        coinType: 529,
+    },
+    bech32Config: {
+        bech32PrefixAccAddr: "secret",
+        bech32PrefixAccPub: "secret" + "pub",
+        bech32PrefixValAddr: "secret" + "valoper",
+        bech32PrefixValPub: "secret" + "valoperpub",
+        bech32PrefixConsAddr: "secret" + "valcons",
+        bech32PrefixConsPub: "secret" + "valconspub",
+    },
+    currencies: [ 
+        { 
+            coinDenom: "SCRT", 
+            coinMinimalDenom: "uscrt", 
+            coinDecimals: 6, 
+        }, 
+    ],
+    feeCurrencies: [
+        {
+            coinDenom: "SCRT",
+            coinMinimalDenom: "uscrt",
+            coinDecimals: 6,
+        },
+    ],
+    stakeCurrency: {
+        coinDenom: "SCRT",
+        coinMinimalDenom: "uscrt",
+        coinDecimals: 6,
+    },
+    coinType: 529,
+    gasPriceStep: {
+        low: 0.1,
+        average: 0.25,
+        high: 0.3,
+    },
+});
+```
