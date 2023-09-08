@@ -1,4 +1,4 @@
-# <img src="https://trivium.network/favicon.png" alt="Trivium API"> Trivium API
+# <img src="/small.png" alt="Trivium API"> Trivium API
 
 Trivium API is a free full-node endpoint for personal and commercial use. This API powers Trivium's own dApps such as [Architech](https://architech.zone), [BlackBox](https://blackbox.cash), and [CertUP](https://certup.net), as well as many other tools and dapps.
 
