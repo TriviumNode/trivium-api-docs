@@ -1,73 +1,77 @@
 # Secret Pulsar Testnet
 ### Chain ID
-`pulsar-2`
+`pulsar-3`
 
 ## Endpoint URLs
 
 ### Tendermint RPC
 For use with SecretCLI
 
-`https://pulsar-2.api.trivium.network:26657`
+`https://pulsar.api.trivium.network:26657`
 
 ### Cosmos LCD / REST
-REST API for use with SecretJS 0.17.x
+REST API for use with SecretJS 1.5+ and 0.17
 
-`https://pulsar-2.api.trivium.network:1317`
+`https://pulsar.api.trivium.network:1317`
 
 ### Cosmos gRPC-Web
-gRPC-Web API for use with SecretJS 1.x.x
+gRPC-Web API for use with SecretJS <1.5
 
-`https://pulsar-2.api.trivium.network:9091`
+`https://pulsar.api.trivium.network:9091`
 
 
 ## Configuration Examples
 
 ### SecretCLI
 ```bash
-secretcli config node https://pulsar-2.api.trivium.network:26657
-secretcli config chain-id pulsar-2
+secretcli config node https://pulsar.api.trivium.network:26657
+secretcli config chain-id pulsar-3
 ```
 
+### SecretJS 1.5+
 
-### SecretJS 1.x.x
+See https://secretjs.scrt.network
+
+
+### SecretJS <1.5
 ```js
 const { SecretNetworkClient } = require('secretjs');
 
 // Query-Only Client
 const queryJs = await SecretNetworkClient.create({
-  grpcWebUrl: 'https://pulsar-2.api.trivium.network:9091',
-  chainId: "pulsar-2",
+  grpcWebUrl: 'https://pulsar.api.trivium.network:9091',
+  chainId: "pulsar-3",
 });
 
 // Client with Keplr Signer
-await window.keplr.enable('pulsar-2');
+await window.keplr.enable('pulsar-3');
 const [{ address: myAddress }] = await keplrOfflineSigner.getAccounts();
 
 const secretJs = await SecretNetworkClient.create({
-  grpcWebUrl: 'https://pulsar-2.api.trivium.network:9091',
-  chainId: 'pulsar-2',
-  wallet: window.getOfflineSignerOnlyAmino('pulsar-2'),
+  grpcWebUrl: 'https://pulsar.api.trivium.network:9091',
+  chainId: 'pulsar-3',
+  wallet: window.getOfflineSignerOnlyAmino('pulsar-3'),
   walletAddress: myAddress,
-  encryptionUtils: window.getEnigmaUtils('pulsar-2'),
+  encryptionUtils: window.getEnigmaUtils('pulsar-3'),
 });
 ```
 
 
-### SecretJS 0.17.x
+### SecretJS 0.17
 ```js
 const { CosmWasmClient, SigningCosmWasmClient } = require('secretjs');
 
 // Query-Only Client
-const queryJs = new CosmWasmClient('https://pulsar-2.api.trivium.network:1317')
+const queryJs = new CosmWasmClient('https://pulsar.api.trivium.network:1317')
 
 // Client with Keplr Signer
-await window.keplr.enable('pulsar-2');
-const offlineSigner = window.getOfflineSigner('pulsar-2');
-const enigmaUtils = window.getEnigmaUtils('pulsar-2');
+await window.keplr.enable('pulsar-3');
+const offlineSigner = window.getOfflineSigner('pulsar-3');
+const enigmaUtils = window.getEnigmaUtils('pulsar-3');
 const accounts = await offlineSigner.getAccounts();
 
 const secretJS = new SigningCosmWasmClient(
-    'https://pulsar-2.api.trivium.network:1317',
+    'https://pulsar.api.trivium.network:1317',
     accounts[0].address,
     offlineSigner,
     enigmaUtils
@@ -76,16 +80,16 @@ const secretJS = new SigningCosmWasmClient(
 
 ### Suggest to Keplr Wallet
 Keplr wallet can be used with any Cosmos SDK based chain by suggesting the chain to Keplr.  
-An example for pulsar-2 is below.  
+An example for pulsar-3 is below.  
   
 Learn more about Keplr at [https://docs.keplr.app](https://docs.keplr.app)
 
 ```js
 await window.keplr.experimentalSuggestChain({
-    chainId: "pulsar-2",
+    chainId: "pulsar-3",
     chainName: "Secret Pulsar Testnet",
-    rpc: "https://pulsar-2.api.trivium.network:26657",
-    rest: "https://pulsar-2.api.trivium.network:1317",
+    rpc: "https://pulsar.api.trivium.network:26657",
+    rest: "https://pulsar.api.trivium.network:1317",
     bip44: {
         coinType: 529,
     },
